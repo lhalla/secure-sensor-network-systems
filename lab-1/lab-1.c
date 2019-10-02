@@ -31,7 +31,6 @@
 #include <stdio.h>
 
 #include "contiki.h"
-#include "sys/energest.h"
 
 //#define E_TIMER
 
@@ -42,6 +41,8 @@
 
 static struct etimer timer;
 #else
+#include "sys/energest.h"
+
 #define MIN_ITV 10
 #define MAX_ITV 155
 #define ITV_STP 11
@@ -92,7 +93,7 @@ static void callback(void * ptr) {
 }
 #endif
 /*---------------------------------------------------------------------------*/
-PROCESS_THREAD(energest_example_process, ev, data)
+PROCESS_THREAD(lab_1_process, ev, data)
 {
   PROCESS_BEGIN();
 
